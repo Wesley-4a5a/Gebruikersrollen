@@ -6,6 +6,10 @@ Author URI: http://www.os-templates.com/
 Licence: Free to use under our free template licence terms
 Licence URI: http://www.os-templates.com/template-terms
 -->
+<?php
+  session_start();
+  include 'session.php';
+?>
 <html>
 <head>
 <title>Cooban | Pages | Full Width</title>
@@ -18,10 +22,10 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');"> 
+<div class="wrapper bgded overlay" style="background-image:url('images/demo/backgrounds/01.png');">
   <!-- ################################################################################################ -->
   <div class="row1">
-    <header id="header" class="hoc clear"> 
+    <header id="header" class="hoc clear">
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
         <h1><a href="index.html">Cooban</a></h1>
@@ -45,7 +49,7 @@ Licence URI: http://www.os-templates.com/template-terms
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
-  <div id="breadcrumb" class="hoc clear"> 
+  <div id="breadcrumb" class="hoc clear">
     <!-- ################################################################################################ -->
     <!-- ################################################################################################ -->
   </div>
@@ -56,10 +60,13 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row3">
-  <main class="hoc container clear"> 
+  <main class="hoc container clear">
     <!-- main body -->
     <!-- ################################################################################################ -->
-    <div class="content"> 
+<?php
+  if($_SESSION['role'] == 'Voorraadbeheerder' || $_SESSION['role'] == 'Accountmanager' || $_SESSION['role'] == 'Manager'){
+ ?>
+    <div class="content">
       <!-- ################################################################################################ -->
       <h1>Producten</h1>
       <div class="scrollable">
@@ -89,6 +96,12 @@ Licence URI: http://www.os-templates.com/template-terms
     </div>
     <!-- ################################################################################################ -->
     <!-- / main body -->
+    <?php
+      }
+      else{
+        echo 'U heeft geen rechten om deze pagina te bekijken.';
+      }
+    ?>
     <div class="clear"></div>
   </main>
 </div>
@@ -99,7 +112,7 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <div class="wrapper row5">
-  <div id="copyright" class="hoc clear"> 
+  <div id="copyright" class="hoc clear">
     <!-- ################################################################################################ -->
     <p class="fl_left">Copyright &copy; 2015 - All Rights Reserved - <a href="#">Domain Name</a></p>
     <p class="fl_right">Template by <a target="_blank" href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
@@ -110,6 +123,9 @@ Licence URI: http://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <a id="backtotop" href="#top"><i class="fa fa-chevron-up"></i></a>
+
+
+
 <!-- JAVASCRIPTS -->
 <script src="layout/scripts/jquery.min.js"></script>
 <script src="layout/scripts/jquery.backtotop.js"></script>

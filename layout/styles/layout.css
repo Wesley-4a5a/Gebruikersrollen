@@ -158,6 +158,15 @@ nav ul, nav ol{margin:0; padding:0; list-style:none;}
 #mainav form select{width:100%; padding:5px; border:1px solid;}
 #mainav form select option{margin:5px; padding:0; border:none;}
 
+#loginform{
+	position: absolute;
+	left: 40vw;
+	top: 14vh;
+	color: black;
+	z-index: 5;
+}
+
+
 /* Breadcrumb */
 #breadcrumb{padding:80px 0 10px; text-transform:uppercase;}
 #breadcrumb ul{margin:0; padding:0; list-style:none;}
@@ -255,6 +264,8 @@ input:focus, textarea:focus, *:required:focus{border-color:#8D9AAD;}
 .services li:hover i{color:#8D9AAD;}
 
 .posts{border-color:#D7D7D7;}
+
+
 
 
 /* Footer */
